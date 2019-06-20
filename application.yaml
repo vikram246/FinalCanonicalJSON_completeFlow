@@ -1,0 +1,22 @@
+# Connection parameters
+---
+sourcesystem_name: MYSQL
+
+password: 
+user: root
+url: jdbc:mysql://localhost:3306/charter
+driverclass: com.mysql.jdbc.Driver
+scheduler_Timer: "60000"  
+
+#Kafka Properties
+
+key: Key1
+value: val
+topicName: avro
+bootstrap: "bootstrap.servers"
+host: "localhost:9092"
+keyserializer: "org.apache.kafka.common.serialization.StringSerializer"
+valueserializer: "org.apache.kafka.common.serialization.StringSerializer"
+
+keySerial: "key.serializer"
+valueSerial: "value.serializer"

@@ -1,0 +1,31 @@
+<root>
+<SourceSystem Name ="MYSQL">
+	<Account SQL="SELECT * FROM account" SQL_Account= "SELECT accountid FROM" TimeStamp_Account=" WHERE updated BETWEEN '%1' and current_timestamp" AccountIdWhereClause=" where accountid = ">
+	
+		<Attribute SourceType="String" TargetType="String" SourceName="name" TargetName="Account_Name"></Attribute>
+		<Attribute SourceType="INT" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+		<Attribute SourceType="String" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		
+		<ChildEntity_Contact SQL="SELECT * FROM contact" SQL_Contact= "SELECT accountid FROM" TimeStamp_Contact=" WHERE updated BETWEEN '%1' and current_timestamp" ContactIdWhereClause=" where accountid = ">
+		
+			<Attribute SourceType="INT" TargetType="INT" SourceName="contactid" TargetName="Contact_ID"></Attribute>
+			<Attribute SourceType="INT" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="fn" TargetName="FirstName"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="ln" TargetName="LastName"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		
+		</ChildEntity_Contact>
+		
+		<ChildEntity_Address SQL="SELECT * FROM address" SQL_Address= "SELECT contactid FROM" TimeStamp_Address=" WHERE updated BETWEEN '%1' and current_timestamp" AddressIdWhereClause=" where contactid = ">
+		
+			<Attribute SourceType="INT" TargetType="INT" SourceName="addressid" TargetName="Address_ID"></Attribute>
+			<Attribute SourceType="INT" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+			<Attribute SourceType="INT" TargetType="INT" SourceName="contactid" TargetName="Contact_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="city" TargetName="City"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		
+		</ChildEntity_Address>
+		
+	</Account>
+</SourceSystem>
+</root>
